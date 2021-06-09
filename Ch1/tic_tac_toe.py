@@ -2,7 +2,6 @@ import random
 import matplotlib.pyplot as plt
 import numpy as np
 
-
 NUM_COLS = 3
 NUM_ROWS = 3
 BOARD_LENGTH = NUM_COLS*NUM_ROWS
@@ -107,7 +106,6 @@ def testWin():
     print('Win check success!')
 
 
-# Testing hash function and winCheck logic
 testHash()
 testWin()
 
