@@ -277,4 +277,5 @@ if __name__ == "__main__":
     plt.xlabel("Time step")
     plt.ylabel("Average cumulative reward")
     plt.legend()
+    plt.savefig('dynaQ_compare.png')
     plt.show()
