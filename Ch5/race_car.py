@@ -317,7 +317,7 @@ class CarAgent:
                 A number between 0 and 1 for the epsilon-soft policy.
         
         """
-
+        tot = 0
         for episode in range(episodes):
 
             if episode % 10000 == 0:
@@ -325,11 +325,15 @@ class CarAgent:
                 np.save("C.npy", self.C)
                 np.save("pi.npy", self.pi)
                 print("Episode {} completed!".format(episode))
+                print(f'Average length of episode = {tot/10000}')
+                tot = 0
+                
                 
             # Generate an episode by turning current policy into epsilon-soft
             pi_copy = np.copy(self.pi)
             
             history = self.generateEpisode(pi_copy, epsilon)
+            tot += len(history)
             
             G = 0.0
             W = 1.0
